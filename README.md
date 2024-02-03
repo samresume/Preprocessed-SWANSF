@@ -20,7 +20,7 @@ Each partition includes both data and labels, catering to comprehensive binary c
 <img src="files.png" width="500">
 
 ### Setup
-Ensure you have `pickle` and `numpy` packages installed in your environment. Use the Python code below to load the data into a numpy array:
+Ensure you have `pickle` and `numpy` packages installed in your environment. Use the Python code below to load the data into an array:
 
 ```python
 import pickle
