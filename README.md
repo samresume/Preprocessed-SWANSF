@@ -15,7 +15,7 @@ For more detailed information about the SWAN-SF dataset, please refer to the fol
 To access our fully preprocessed version of the dataset, open the `Preprocessed_SWANSF.txt` file, where you will find a Google Drive link to the dataset. The zip file includes 10 files: one data file and one label file for each of the five partitions.
 
 Each partition includes both data and labels, catering to comprehensive binary classification tasks.
-<img src="files" width="100">
+<img src="files.png" width="200">
 
 ### Setup
 Ensure you have `pickle` and `numpy` packages installed in your environment. Use the Python code below to load the data into a numpy array:
