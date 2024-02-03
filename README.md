@@ -17,7 +17,7 @@ To access our fully preprocessed version of the dataset, open the `Preprocessed_
 Each partition includes both data and labels, catering to comprehensive binary classification tasks.
 <br/>
 <br/>
-<img src="files.png" width="500">
+<img src="Screenshot.png" width="500">
 
 ### Setup
 Ensure you have `pickle` and `numpy` packages installed in your environment. Use the Python code below to load the data into an array:
