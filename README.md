@@ -12,7 +12,7 @@ For more detailed information about the SWAN-SF dataset, please refer to the fol
 - [Flare Prediction from Multivariate Time Series Data of Photospheric Magnetic Field Parameters](https://www.nature.com/articles/s41597-020-0548-x)
 
 ## How to Use
-The training partitions encompass every phase of our data preprocessing pipeline, including various sampling techniques. Conversely, the test datasets exclusively incorporate imputation and normalization procedures, without the application of any sampling techniques.
+The training partitions encompass every phase of our data preprocessing pipeline, including various sampling techniques. Conversely, the test partitions exclusively incorporate imputation and normalization procedures, without the application of any sampling techniques.
 
 <img src="Sampling.svg" width="600" alt="Preprocessing Pipeline" title="Preprocessing Pipeline">
 
