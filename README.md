@@ -14,10 +14,7 @@ For more detailed information about the SWAN-SF dataset, please refer to the fol
 ## How to Use
 The training partitions encompass every phase of our data preprocessing pipeline, including various sampling techniques. Conversely, the test datasets exclusively incorporate imputation and normalization procedures, without the application of any sampling techniques.
 
-Each partition includes both data and labels, catering to comprehensive binary classification tasks.
-<br/>
-<br/>
-<img src="Screenshot.png" width="500">
+In each partition, data and labels are kept separate to maintain clarity and organization.<br/>
 
 ### Setup
 Ensure you have `pickle` and `numpy` packages installed in your environment. Use the Python code below to load the data into an array:
@@ -26,28 +23,46 @@ Ensure you have `pickle` and `numpy` packages installed in your environment. Use
 import pickle
 import numpy as np
 
-data_dir = "/path/to/your/Preprocessed_SWANSF/"
+# Training Partitons
+data_dir = "/path/to/your/Preprocessed_SWANSF/train/"
 X_train = []
 y_train = []
 num_partitions = 5
 
 for i in range(num_partitions):
-    with open(f"{data_dir}Partition{i+1}_RUS-Tomek-TimeGAN_LSBZM-Norm_WithoutC_KnnImputation.pkl", 'rb') as f:
+    with open(f"{data_dir}Partition{i+1}_RUS-Tomek-TimeGAN_LSBZM-Norm_WithoutC_FPCKNN-impute.pkl", 'rb') as f:
         X_train.append(pickle.load(f))
-    with open(f"{data_dir}Partition{i+1}_Labels_RUS-Tomek-TimeGAN_LSBZM-Norm_WithoutC_KnnImputation.pkl", 'rb') as f:
+    with open(f"{data_dir}Partition{i+1}_Labels_RUS-Tomek-TimeGAN_LSBZM-Norm_WithoutC_FPCKNN-impute.pkl", 'rb') as f:
         y_train.append(pickle.load(f))
 ```
 
+```python
+import pickle
+import numpy as np
+
+# Test Partitons
+data_dir = "/path/to/your/Preprocessed_SWANSF/test/"
+X_test = []
+y_test = []
+num_partitions = 5
+
+for i in range(num_partitions):
+    with open(f"{data_dir}Partition{i+1}_LSBZM-Norm_FPCKNN-impute.pkl", 'rb') as f:
+        X_test.append(pickle.load(f))
+    with open(f"{data_dir}Partition{i+1}_Labels_LSBZM-Norm_FPCKNN-impute.pkl", 'rb') as f:
+        y_test.append(pickle.load(f))
+```
+
 ### Data Structure
-Each partition is stored in a 2D `.pkl` file, with the shape `(num_samples, num_attributes)`. The attributes are concatenated across 24 time series attributes with 60 timestamps each, resulting in a 1440-dimensional vector per sample.
+Each partition is stored in a 3D `.pkl` file, with the shape `(num_samples, num_timestamps, num_attributes)`.
 
 ### Attributes Order
-The order of the attributes in the array is as follows:
+The order of the attributes is as follows:
 `['R_VALUE', 'TOTUSJH', 'TOTBSQ', 'TOTPOT', 'TOTUSJZ', 'ABSNJZH', 'SAVNCPP', 'USFLUX', 'TOTFZ', 'MEANPOT', 'EPSX', 'EPSY', 'EPSZ', 'MEANSHR', 'SHRGT45', 'MEANGAM', 'MEANGBT', 'MEANGBZ', 'MEANGBH', 'MEANJZH', 'TOTFY', 'MEANJZD', 'MEANALP', 'TOTFX']`
 
 ### Data Interpretation Examples
-- `X_train[0][0,0:60]` corresponds to the `R_VALUE` attribute of the first sample of partition 1. This slice gives you the time series data for the `R_VALUE` attribute for the first sample.
-- `X_train[3][20,60:120]` corresponds to the `TOTUSJH` attribute of the twenty-first sample of partition 4. Here, you're accessing the time series data for the `TOTUSJH` attribute for a specific sample in partition 4.
+- `X_train[0][0,:,0]` corresponds to the `R_VALUE` attribute of the first sample of partition 1. This gives you the time series data for the `R_VALUE` attribute for the first sample.
+- `X_train[3][20,:,1]` corresponds to the `TOTUSJH` attribute of the twenty-first sample of partition 4. Here, you're accessing the time series data for the `TOTUSJH` attribute for a specific sample in partition 4.
 
 The `y_train` files hold the labels for the samples, organized in a 1D vector:
 - `y_train[0][0]` corresponds to the label of the first Multivariate Time Series (MVTS) sample of partition 1, which can be 0 or 1, indicating the binary classification target.
