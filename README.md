@@ -12,7 +12,7 @@ For more detailed information about the SWAN-SF dataset, please refer to the fol
 - [Flare Prediction from Multivariate Time Series Data of Photospheric Magnetic Field Parameters](https://www.nature.com/articles/s41597-020-0548-x)
 
 ## How to Use
-To access our fully preprocessed version of the dataset, open the `Preprocessed_SWANSF.txt` file, where you will find a Google Drive link to the dataset. The zip file includes 10 files: one data file and one label file for each of the five partitions.
+The training partitions encompass every phase of our data preprocessing pipeline, including various sampling techniques. Conversely, the test datasets exclusively incorporate imputation and normalization procedures, without the application of any sampling techniques.
 
 Each partition includes both data and labels, catering to comprehensive binary classification tasks.
 <br/>
