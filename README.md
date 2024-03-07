@@ -14,7 +14,8 @@ For more detailed information about the SWAN-SF dataset, please refer to the fol
 ## How to Use
 The training partitions encompass every phase of our data preprocessing pipeline, including various sampling techniques. Conversely, the test datasets exclusively incorporate imputation and normalization procedures, without the application of any sampling techniques.
 
-![Alt text](Sampling.png)
+<img src="Sampling.png" width="300" alt="Alt text" title="Optional title">
+
 
 In each partition, data and labels are kept separate to maintain clarity and organization.<br/>
 
