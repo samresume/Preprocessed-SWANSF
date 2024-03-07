@@ -17,7 +17,7 @@ The training partitions encompass every phase of our data preprocessing pipeline
 <img src="Sampling.svg" width="600" alt="Preprocessing Pipeline" title="Preprocessing Pipeline">
 
 
-In each partition, data and labels are kept separate to maintain clarity and organization.<br/>
+For each partition, data and labels are kept separate to maintain clarity and organization.<br/>
 
 ### Setup
 Ensure you have `pickle` and `numpy` packages installed in your environment. Use the Python code below to load the data into an array:
