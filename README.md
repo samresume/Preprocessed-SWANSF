@@ -68,7 +68,7 @@ The order of the attributes is as follows:
 - `X_train[3][20,:,1]` corresponds to the `TOTUSJH` attribute of the twenty-first sample of partition 4. Here, you're accessing the time series data for the `TOTUSJH` attribute for a specific sample in partition 4.
 
 The `y_train` files hold the labels for the samples, organized in a 1D vector:
-- `y_train[0][0]` corresponds to the label of the first Multivariate Time Series (MVTS) sample of partition 1, which can be 0 or 1, indicating the binary classification target.
+- `y_train[0][2]` corresponds to the label of the third Multivariate Time Series (MVTS) sample of partition 1, which can be 0 or 1, indicating the binary classification target.
 
 ### Citation
 Our paper detailing this preprocessed dataset is currently under review. Please ensure to cite it appropriately once published.
