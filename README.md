@@ -72,5 +72,5 @@ The order of the attributes is as follows:
 The `y_train` files hold the labels for the samples, organized in a 1D vector:
 - `y_train[0][2]` corresponds to the label of the third Multivariate Time Series (MVTS) sample of partition 1, which can be 0 or 1, indicating the binary classification target.
 
-### Citation
+### Copy Right
 Our paper detailing this preprocessed dataset is currently under review. Please ensure to cite it appropriately once published.
